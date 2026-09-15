@@ -1,0 +1,20 @@
+{
+  "name": "zestdg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for Zest Data Group LLC",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "npm run clean && eleventy",
+    "clean": "rm -rf _site",
+    "og": "rsvg-convert -w 1200 -h 630 src/img/og.svg -o src/img/og.png",
+    "check": "node scripts/check-links.mjs",
+    "verify": "npm run build && npm run check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

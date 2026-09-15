@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <!-- Zest Data Group logo draft v2: a lime with the lower-right quarter cut
+       away to show the segments, two leaves, and three trailing bands in the
+       brand palette. Outline color #122B20 is the site's ink. -->
+  <defs>
+    <clipPath id="wedge"><path d="M 320 240 L 452 240 A 132 132 0 0 1 320 372 Z"/></clipPath>
+  </defs>
+  <!-- trailing bands, back to front: navy, blue, orange. Ends tuck behind the fruit. -->
+  <g fill="none" stroke-linecap="round" stroke-width="32">
+    <path d="M 44 336 C 140 336, 210 306, 320 292" stroke="#192E5B"/>
+    <path d="M 26 280 C 126 280, 200 254, 320 248" stroke="#1E65A7"/>
+    <path d="M 52 224 C 136 224, 206 204, 320 206" stroke="#F1A104"/>
+  </g>
+  <!-- cut face: pale flesh, three segments separated by pith, all clipped to the missing quarter -->
+  <g clip-path="url(#wedge)">
+    <circle cx="320" cy="240" r="120" fill="#EEF6D2"/>
+    <circle cx="320" cy="240" r="110" fill="none" stroke="#FAF0E6" stroke-width="14"/>
+    <g stroke="#FAF0E6" stroke-width="12" stroke-linecap="round">
+      <path d="M 320 240 L 470 240"/>
+      <path d="M 320 240 L 426 346"/>
+      <path d="M 320 240 L 320 390"/>
+    </g>
+    <g stroke="#8DC26F" stroke-width="5" stroke-linecap="round" opacity="0.9">
+      <path d="M 320 240 L 436 271"/>
+      <path d="M 320 240 L 351 356"/>
+    </g>
+  </g>
+  <!-- rind: three quarters, bold outline -->
+  <path d="M 320 240 L 440 240 A 120 120 0 1 0 320 360 Z" fill="#00743F" stroke="#122B20" stroke-width="14" stroke-linejoin="round"/>
+  <!-- outer edge of the cut face, so the quarter reads as part of the fruit -->
+  <path d="M 440 240 A 120 120 0 0 1 320 360" fill="none" stroke="#122B20" stroke-width="10" stroke-linecap="round"/>
+  <!-- stem and two leaves -->
+  <g stroke="#122B20" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 320 122 L 320 92"/>
+    <path d="M 320 96 C 286 96, 244 74, 228 36 C 272 30, 314 54, 320 96 Z" fill="#25B396"/>
+    <path d="M 322 96 C 354 92, 396 66, 410 30 C 370 28, 332 54, 322 96 Z" fill="#00743F"/>
+  </g>
+</svg>

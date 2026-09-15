@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    svg { stroke: #00743F; }            /* brand green */
+    .eye { fill: #00743F; stroke: none; }
+  </style>
+  <!-- body: serpentine S curve -->
+  <path d="M28 150 C 40 110, 80 118, 96 138 S 150 168, 168 128 C 178 104, 158 84, 136 90"/>
+  <!-- neck and head -->
+  <path d="M136 90 C 118 96, 104 78, 116 60 C 126 46, 150 46, 158 60"/>
+  <path d="M158 60 L 182 54 L 164 72"/>
+  <!-- horn -->
+  <path d="M124 56 L 112 34"/>
+  <!-- eye -->
+  <circle class="eye" cx="142" cy="60" r="4"/>
+  <!-- wing -->
+  <path d="M100 136 C 88 100, 60 78, 34 70 C 60 96, 70 122, 72 142"/>
+  <!-- tail tip -->
+  <path d="M28 150 C 18 158, 16 172, 26 182 C 30 170, 38 164, 48 164"/>
+  <!-- spine spikes -->
+  <path d="M110 128 L 116 116 M 124 142 L 132 132 M 140 150 L 150 144"/>
+</svg>

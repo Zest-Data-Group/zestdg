@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Publications
+permalink: /publications/
+description: Selected peer-reviewed publications in conservation science, spatial modeling, and remote sensing from the team at Zest Data Group.
+---
+<h1>Publications</h1>
+<p class="lede">The methods behind our client work come out of peer-reviewed research. A selection is below; the full list lives on <a href="{{ pubStats.scholar }}" rel="noopener">Google Scholar</a>.</p>
+
+<dl class="stats">
+  <div><dt>Citations</dt><dd>{{ pubStats.citations }}</dd></div>
+  <div><dt>h-index</dt><dd>{{ pubStats.hIndex }}</dd></div>
+  <div><dt>i10-index</dt><dd>{{ pubStats.i10 }}</dd></div>
+</dl>
+<p class="meta">Google Scholar, {{ pubStats.asOf }}.</p>
+
+<section class="chart-section">
+  <h2>Citations over time</h2>
+  <p>Citations across all of our publications, with the three most-cited papers drawn on top. Switch between the count per year and the running total. From Google Scholar; the hatched bar is the current year to date.</p>
+  <figure id="citation-chart" class="chart"></figure>
+  <script type="application/json" id="citation-data">{{ pubStats.byYear | dump | safe }}</script>
+  <script type="application/json" id="citation-series">{{ pubStats.topPapers | dump | safe }}</script>
+  <script src="/js/citation-chart.js" defer></script>
+  <p class="page-note">Like this chart? It is one dependency-free script that reads a short list of years and counts.
+     <a href="https://github.com/Zest-Data-Group/scholar-citations-chart" rel="noopener">Grab it from GitHub</a>: edit one text file with your Scholar numbers, open one page, download the picture. No installation.</p>
+</section>
+
+<h2>Selected work</h2>
+<ol class="pubs">
+{% for p in publications | featuredPubs %}
+  <li class="pub pub-featured">
+    <p class="pub-title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+    <p class="pub-authors">{{ p.authors }}</p>
+    <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citations{% endif %}</p>
+    {% if p.note %}<p class="pub-note">{{ p.note }}</p>{% endif %}
+  </li>
+{% endfor %}
+</ol>
+
+<h2>Other publications</h2>
+<p>Grouped by topic. Open a group to see the papers.</p>
+{% set others = publications | restPubs %}
+<div class="pub-groups">
+{% for c in pubCategories %}
+  {% set group = others | inCategory(c.key) %}
+  {% if group.length %}
+  <details class="pub-group">
+    <summary>
+      <span class="pub-group-title">{{ c.label }}</span>
+      <span class="pub-group-meta">{{ group.length }} paper{% if group.length != 1 %}s{% endif %}</span>
+      <span class="pub-group-blurb">{{ c.blurb }}</span>
+    </summary>
+    <ol class="pubs">
+    {% for p in group %}
+      <li class="pub">
+        <p class="pub-title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+        <p class="pub-authors">{{ p.authors }}</p>
+        <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citations{% endif %}</p>
+      </li>
+    {% endfor %}
+    </ol>
+  </details>
+  {% endif %}
+{% endfor %}
+</div>
+
+<p class="page-note">Full publication list and citation metrics on <a href="{{ pubStats.scholar }}" rel="noopener">Google Scholar</a>.</p>

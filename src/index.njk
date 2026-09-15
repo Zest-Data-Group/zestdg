@@ -1,0 +1,55 @@
+---
+layout: base.njk
+mainClass: home
+---
+<section class="hero">
+  <img class="hero-logo" src="/img/logo.svg" alt="Zest Data Group logo: a lime with a quarter cut away and trailing bands of color" width="520" height="420">
+  <h1>{{ site.tagline }}</h1>
+  <p class="lede">A geospatial consultancy. We build the analyses, applications, and open source tools that turn field data into decisions.</p>
+  <p class="cta"><a class="button" href="mailto:{{ site.email }}">Work with us</a> <a href="/projects/">See past projects</a></p>
+</section>
+
+<section class="services">
+  <h2>What we do</h2>
+  <div class="service-grid">
+    <div>
+      <h3>Spatial data analysis</h3>
+      <p>Species distribution models, gap analyses, and raster workflows at scale, in R and Google Earth Engine.</p>
+    </div>
+    <div>
+      <h3>Web application development</h3>
+      <p>Shiny applications that let non-technical teams explore, map, and download their own data.</p>
+    </div>
+    <div>
+      <h3>Open source library development</h3>
+      <p>R packages that turn a research method into a documented, tested tool anyone can run.</p>
+    </div>
+  </div>
+</section>
+
+{% set featured = collections.projects | featured %}
+{% if featured.length %}
+<section class="featured">
+  <h2>Featured work</h2>
+  {% for p in featured %}
+  <a class="feature" href="{{ p.url }}">
+    {% if p.data.thumb %}<img class="thumb" src="{{ p.data.thumb }}" alt="{{ p.data.thumbAlt or '' }}" width="320" height="320" loading="lazy">{% endif %}
+    <span class="feature-body">
+      <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
+      <strong>{{ p.data.title }}</strong>
+      <span>{{ p.data.summary }}</span>
+    </span>
+  </a>
+  {% endfor %}
+  <p><a href="/projects/">All projects &rarr;</a></p>
+</section>
+{% endif %}
+
+<section class="research">
+  <h2>Grounded in the research</h2>
+  <div class="research-row">
+    <img class="thumb" src="/img/thumbs/hibiscus.jpg" alt="A white hibiscus with a crimson center" width="320" height="320" loading="lazy">
+    <p>Our methods come out of peer-reviewed work: {{ pubStats.citations }} citations
+       and an h-index of {{ pubStats.hIndex }}. <a href="/publications/">Selected publications &rarr;</a></p>
+  </div>
+</section>

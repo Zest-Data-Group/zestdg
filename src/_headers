@@ -1,0 +1,13 @@
+# Cloudflare Pages reads this file from the build output root.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Fingerprint-free assets: short cache, revalidated. Bump if you add hashing.
+/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+/img/*
+  Cache-Control: public, max-age=86400, must-revalidate

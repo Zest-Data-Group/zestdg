@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+<article class="project">
+  <p class="meta">
+    <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if client %} · {{ client }}{% endif %}
+  </p>
+  <h1>{{ title }}</h1>
+  {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}
+  {% if tools %}
+  <ul class="tools" aria-label="Tools used">
+    {% for t in tools %}<li>{{ t }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {{ content | safe }}
+
+  {% if repo or link %}
+  <p class="project-links">
+    {% if link %}<a class="button" href="{{ link }}" rel="noopener">Open the application</a>{% endif %}
+    {% if repo %}<a href="{{ repo }}" rel="noopener">Source on GitHub</a>{% endif %}
+  </p>
+  {% endif %}
+</article>
+<p class="back"><a href="/projects/">&larr; All projects</a></p>
