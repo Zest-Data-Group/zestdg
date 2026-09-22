@@ -1,4 +1,11 @@
-# Deploying zestdg.com to Cloudflare Pages
+# Deploying zestdg.com to Cloudflare
+
+**Status 2026-09-22:** live. The repo is connected to Cloudflare as a Worker
+serving static assets (`zestdg.carver-dan1.workers.dev`), with `zestdg.com`
+and `www.zestdg.com` attached under the Worker's Domains & Routes. Every push
+to `main` redeploys. The Pages instructions below are the older plan; the
+build settings and post-deploy checks apply to the Worker just the same.
+
 
 Two paths. Path A (GitHub) is set once and then every `git push` deploys automatically.
 Path B (CLI) publishes straight from your machine. You can use both on the same project.
@@ -10,7 +17,7 @@ Path B (CLI) publishes straight from your machine. You can use both on the same 
    that every internal link resolves. Confirm `_site/index.html` exists.
 
 ## Path A — GitHub auto-deploy (recommended)
-1. Push this folder to a GitHub repo, e.g. `dcarver1/zestdg`.
+1. The repo is on GitHub at `Zest-Data-Group/zestdg` (done 2026-09-22).
 2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → pick the repo.
 3. Build settings:
    - Framework preset: **Eleventy**
@@ -58,7 +65,7 @@ and social card URLs — if it is wrong, search engines index the wrong host.
 
 ## Common problems
 - **Build fails on Cloudflare but works locally** → almost always the Node version. Set `NODE_VERSION=20`.
-- **CSS or dragon missing** → paths must start with `/` (e.g. `/css/style.css`). Check `.eleventy.js` passthrough copies.
+- **CSS or logo missing** → paths must start with `/` (e.g. `/css/style.css`). Check `.eleventy.js` passthrough copies.
 - **Domain shows "not active"** → nameservers haven't propagated yet; can take up to 24 h.
 - **Want to preview a change before it's live** → open a pull request; Pages builds a preview URL per branch.
 - **A draft project appeared on the live site** → the file still has `draft: true`

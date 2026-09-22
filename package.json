@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Static site for Zest Data Group LLC",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "npm run clean && eleventy",

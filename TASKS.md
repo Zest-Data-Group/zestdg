@@ -70,27 +70,25 @@ Status key: `[ ]` open · `[x]` done · `[-]` not needed
 
 - [x] **GitHub organization.** `Zest-Data-Group` created 2026-09-15; the site's
       GitHub link points at it.
-- [ ] **Version control this folder.** Local git repos exist for this folder and
-      for `~/Documents/scholar-citations-chart`. Both were pushed to the org on
-      2026-09-15 and then pulled back at Dan's request: set to private, to be
-      deleted. Push again when ready. The publications page links to
-      `Zest-Data-Group/scholar-citations-chart`, so publish that repo before the
-      site goes live or change the link.
+- [x] **Version control this folder.** Pushed as a public repo to
+      `Zest-Data-Group/zestdg` on 2026-09-22.
+- [ ] **Publish the chart repo.** `~/Documents/scholar-citations-chart` is not
+      on GitHub. The publications page links to
+      `Zest-Data-Group/scholar-citations-chart`, so push it before the site
+      goes live or change the link (details in `TODO.md`).
 - [ ] **Host the site.** Follow Path A in `DEPLOY.md`: connect the repo to
       Cloudflare Pages, Eleventy preset, build `npm run build`, output `_site`,
       `NODE_VERSION=20`, attach `zestdg.com` and `www.zestdg.com`. Run the
-      post-deploy checks listed there. Before going live: the contributor names
-      on the About page need the people's consent (see Collaborators below).
-- [ ] **Email on the domain.** Pick one before the site goes live, since the site
-      already publishes `hello@zestdg.com`:
-  - Cloudflare Email Routing — free; forwards to Gmail; Gmail can "send as" the
-    address.
-  - Google Workspace Business Starter — about $7/user/month; real mailbox,
-    calendar, and Drive owned by the business.
-- [ ] **Icon and logo package** from the existing dragon SVG:
+      post-deploy checks listed there. As of 2026-09-22 no Pages project
+      exists and `zestdg.com` has no web address yet.
+- [x] **Email on the domain.** Cloudflare Email Routing is live for
+      `hello@zestdg.com` (MX records confirmed 2026-09-22). Set up Gmail
+      "send as" for the address if replies should come from it.
+- [ ] **Icon and logo package** from the lime logo (`src/img/logo.svg`):
   - [ ] Favicon set (16, 32, 180 Apple touch, 512 for manifest).
-  - [ ] Square logo for GitHub org and LinkedIn.
-  - [ ] Wordmark lockup (dragon + name) for email signature and proposals.
+  - [x] Square logo for GitHub org and LinkedIn: `design/logo-github.png`
+        (2026-09-22). Upload it to the org profile.
+  - [ ] Wordmark lockup (lime + name) for email signature and proposals.
 - [ ] **Profiles.** LinkedIn company page; ORCID link on the About page.
       Google Business Profile is optional for a remote consultancy.
 
@@ -100,9 +98,9 @@ The site's own task list is in `TODO.md`.
 
 ## Collaborators (Ian and Gavin)
 
-- [ ] **Ask each directly** whether they want to appear on the About page and in
-      what role. `src/_data/team.js` already supports extra people with a bio,
-      photo, and links; adding them is a small edit once they agree.
+- [x] **Ask each directly** whether they want to appear on the About page and in
+      what role. Dan supplied bios and photos for both on 2026-09-22 and they
+      are live in `src/_data/team.js`.
 - [ ] **Decide the working relationship.** If they are paid through the LLC they
       are contractors: independent-contractor agreement, W-9 from each, and a
       1099-NEC at year end if payments exceed $600. Settle this before listing

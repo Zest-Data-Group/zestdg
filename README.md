@@ -28,7 +28,7 @@ repo: https://github.com/dcarver1/...   # optional
 link: https://app-url   # optional
 thumb: /img/thumbs/x.jpg   # optional square photo, shown on the home page and project list
 thumbAlt: What the photo shows
-figure: /img/figures/x.png # optional; replaces thumb on the project list only
+figure: /img/figures/x.png # optional square image; replaces thumb everywhere it is shown
 ---
 
 Markdown body goes here.
@@ -39,8 +39,8 @@ Projects sort newest first automatically.
 
 **Drafts.** `draft: true` keeps a project out of the build — no page, no sitemap
 entry, not on the home page — while still showing it in
-`npm run dev`. Delete the line to publish. `src/projects/gamma.md` is currently a
-draft placeholder.
+`npm run dev`. Delete the line to publish. `src/projects/training.md` is
+currently a draft.
 
 Images go in `src/img/` and are referenced as `/img/filename.png`.
 
@@ -53,7 +53,7 @@ Images go in `src/img/` and are referenced as `/img/filename.png`.
 | Google Scholar metrics | `src/_data/pubStats.js` |
 | Home copy | `src/index.njk` |
 | About | `src/about.md` |
-| Project list | `src/projects.njk` |
+| Project list (expandable cards) | `src/projects.njk` |
 | Layout, nav, footer, meta tags | `src/_includes/base.njk` |
 | Single project layout | `src/_includes/project.njk` |
 | Styles | `src/css/style.css` |
@@ -64,10 +64,16 @@ Images go in `src/img/` and are referenced as `/img/filename.png`.
 Change the email or site URL in **one** place: `src/_data/site.js`. It feeds the
 footer, contact links, canonical tags, structured data, and the sitemap.
 
-## Add a collaborator
+## Add a team member
 People on the About page come from `src/_data/team.js`. Copy the commented block
-at the bottom of that file, fill it in, and drop a photo in `src/img/`. Entries
-render in the order listed; `image` and `links` are both optional.
+at the bottom of that file, fill it in, and drop a square photo in `src/img/`
+(the page shows it as a 120px circle). Entries render in the order listed;
+`image`, `bio`, and `links` are all optional.
+
+## External links
+Any link whose address leaves the site gets `target="_blank"` and
+`rel="noopener"` at build time, from a transform in `.eleventy.js`. Internal
+links and `mailto:` links are left alone, so nothing needs adding by hand.
 
 ## Add a publication
 Add an entry to `src/_data/publications.js`. Set `featured: true` to promote it
@@ -94,3 +100,20 @@ npm run og       # requires rsvg-convert (librsvg)
 Both files are committed; regenerate the PNG only when the SVG changes.
 
 See DEPLOY.md for Cloudflare.
+
+## License
+Two things live in this repo and they carry different terms; `NOTICE` has the
+full statement.
+
+- **Code** (Eleventy config, `src/_includes/`, `src/css/`, `src/js/`,
+  `scripts/`, the sitemap, robots, and 404 templates, `package.json`) is
+  [AGPL-3.0-or-later](LICENSE). Fork it, build your own site from it, keep it
+  open. Commercial licensing on other terms is available from hello@zestdg.com.
+- **Content** (project write-ups, the About page, the text inside templates,
+  the data files in `src/_data/`, and everything under `src/img/`) is
+  © Zest Data Group LLC, all rights reserved. Ask before reusing it.
+- **Brand.** The Zest Data Group name and the lime logo are not licensed and
+  may not be used to identify a derived site.
+
+Team photos are used with each person's permission. The GAMMa figure shows an
+application built for the Atlanta Botanical Garden and is used with permission.

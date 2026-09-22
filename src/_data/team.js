@@ -47,4 +47,12 @@ module.exports = [
       the generation of training and validation datasets for remote sensing
       classification projects.`,
   },
+
+  // {
+  //   name: "Person name",
+  //   role: "What they do on projects",
+  //   image: "/img/their-photo.jpg",
+  //   links: [{ label: "Website", url: "https://example.com" }],
+  //   bio: `A sentence or two on their background and what they bring.`,
+  // },
 ];

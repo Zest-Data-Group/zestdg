@@ -15,7 +15,7 @@
  *
  * Open the page with #cumulative to start in cumulative mode. Colors come from
  * CSS custom properties (--chart-bar, --chart-s1..s3, --ink, --mist, --paper)
- * so the chart follows whatever page it lands on. MIT. zestdg.com
+ * so the chart follows whatever page it lands on. AGPL-3.0-or-later. zestdg.com
  */
 (function () {
   const host = document.getElementById("citation-chart");

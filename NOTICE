@@ -1,0 +1,27 @@
+Zest Data Group website
+Copyright (c) 2026 Zest Data Group LLC
+
+CODE
+The code in this repository is licensed under the GNU Affero General Public
+License, version 3 or (at your option) any later version. See LICENSE. This
+covers the Eleventy configuration, everything under src/_includes/, src/css/,
+src/js/, and scripts/, the sitemap, robots, and 404 templates, package.json,
+and the deploy notes.
+
+Commercial licensing on other terms is available: hello@zestdg.com.
+
+CONTENT
+The written content, data, and images are not covered by the AGPL and are
+reserved: all rights reserved, Zest Data Group LLC. This includes the project
+write-ups in src/projects/, the About page, the text within templates, the
+publication, team, and site data files in src/_data/, and every file under
+src/img/ (photos, figures, social card, and logo files).
+
+Team photographs are used with each person's permission and remain the
+property of their respective owners. Figures that show a client's application
+are used with that client's permission.
+
+BRAND
+"Zest Data Group" and the lime logo identify Zest Data Group LLC. They are not
+licensed under any of the terms above and may not be used to identify a
+forked or derived site.
