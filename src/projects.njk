@@ -8,14 +8,33 @@ description: Selected geospatial and R development work — GAMMa, the crop wild
 <p class="lede">Selected work in conservation science and spatial modeling. All of it is open source — repositories are linked from each write-up.</p>
 <ul class="project-list">
 {% for p in collections.projects %}
-  <li class="project-row">
-    {% set img = p.data.figure or p.data.thumb %}
-    {% if img %}<a href="{{ p.url }}" tabindex="-1" aria-hidden="true"><img class="thumb" src="{{ img }}" alt="" width="320" height="320" loading="lazy"></a>{% endif %}
-    <div>
-      <a href="{{ p.url }}"><strong>{{ p.data.title }}</strong></a>
-      <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
-      <p>{{ p.data.summary }}</p>
-    </div>
+  <li>
+    {#- Each project is a card. Clicking anywhere on it expands the full write-up
+        in place; the standalone page is still linked from inside. -#}
+    <details class="project-card">
+      <summary class="project-row">
+        {% set img = p.data.figure or p.data.thumb %}
+        {% if img %}<img class="thumb" src="{{ img }}" alt="" width="320" height="320" loading="lazy">{% endif %}
+        <span class="project-head">
+          <strong>{{ p.data.title }}</strong>
+          <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
+          <span class="project-summary">{{ p.data.summary }}</span>
+        </span>
+      </summary>
+      <div class="project-body">
+        {% if p.data.tools %}
+        <ul class="tools" aria-label="Tools used">
+          {% for t in p.data.tools %}<li>{{ t }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {#- The write-up's sections are h2 on their own page; here they sit under the card title. -#}
+        {{ p.templateContent | replace("<h2", "<h3") | replace("</h2>", "</h3>") | safe }}
+        <p class="project-links">
+          {% if p.data.link %}<a href="{{ p.data.link }}" rel="noopener">Open the application</a>{% endif %}
+          {% if p.data.repo %}<a href="{{ p.data.repo }}" rel="noopener">Source on GitHub</a>{% endif %}
+        </p>
+      </div>
+    </details>
   </li>
 {% else %}
   <li><p>Write-ups are on the way. <a href="mailto:{{ site.email }}">Email me</a> in the meantime.</p></li>

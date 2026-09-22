@@ -2,16 +2,23 @@
 layout: base.njk
 ---
 <article class="project">
-  <p class="meta">
-    <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if client %} · {{ client }}{% endif %}
-  </p>
-  <h1>{{ title }}</h1>
-  {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}
-  {% if tools %}
-  <ul class="tools" aria-label="Tools used">
-    {% for t in tools %}<li>{{ t }}</li>{% endfor %}
-  </ul>
-  {% endif %}
+  <header class="project-header">
+    <div>
+      <p class="meta">
+        <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if client %} · {{ client }}{% endif %}
+      </p>
+      <h1>{{ title }}</h1>
+      {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}
+      {% if tools %}
+      <ul class="tools" aria-label="Tools used">
+        {% for t in tools %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {#- The same square image that represents the project on the listing. -#}
+    {% set img = figure or thumb %}
+    {% if img %}<img class="project-figure" src="{{ img }}" alt="{{ (figureAlt if figure else thumbAlt) or '' }}" width="320" height="320">{% endif %}
+  </header>
 
   {{ content | safe }}
 

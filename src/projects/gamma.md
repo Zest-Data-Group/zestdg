@@ -1,13 +1,15 @@
 ---
-title: GAMMa — Gap Analysis & Metacollection Management Tool
+title: GAMMa
 date: 2026-08-01
 featured: true
 client: Atlanta Botanical Garden
-summary: A web application that shows botanic gardens and genebanks how well their living collections represent a species' wild range — and where to collect next.
+summary: A web application that allows users to view the extent of their own collection against the data available on GBIF.
 tools: [R, Shiny, leaflet, sf, terra, GBIF]
 link: https://atlantabg.shinyapps.io/GAMMA_dev/
 thumb: /img/thumbs/poppy.jpg
 thumbAlt: A California poppy in bloom
+figure: /img/figures/gamma.jpg
+figureAlt: The GAMMa landing page, "Observing the meta collection"
 # repo: the source lives in a collaborator's repository; link it only if the
 # project team wants it public from here.
 ---

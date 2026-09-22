@@ -194,7 +194,7 @@
       const label = s.short || s.title || s.doi || `Paper ${si + 1}`;
       if (s.doi) {
         const a = h("a", null, li, label);
-        a.href = `https://doi.org/${s.doi}`; a.rel = "noopener"; if (s.title) a.title = s.title;
+        a.href = `https://doi.org/${s.doi}`; a.target = "_blank"; a.rel = "noopener"; if (s.title) a.title = s.title;
       } else {
         h("span", null, li, label);
       }

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <!-- Zest Data Group logo v2: an oval lime with a third cut away (120°),
+       two leaves, and the same three trailing bands. Ink #122B20. -->
+  <defs>
+    <!-- the missing third: from 0° (right) sweeping down to 120°, in the ellipse's own frame -->
+    <clipPath id="wedge2">
+      <!-- elliptical sector of the lime itself: 0° to 120° -->
+      <path d="M 320 244 L 462 244 A 142 120 0 0 1 249 347.9 Z"/>
+    </clipPath>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-width="32">
+    <path d="M 44 336 C 140 336, 210 306, 320 292" stroke="#192E5B"/>
+    <path d="M 26 280 C 126 280, 200 254, 320 248" stroke="#1E65A7"/>
+    <path d="M 52 224 C 136 224, 206 204, 320 206" stroke="#F1A104"/>
+  </g>
+  <!-- cut face: flesh, pith ring, three segments, clipped to the missing third -->
+  <g clip-path="url(#wedge2)">
+    <ellipse cx="320" cy="244" rx="142" ry="120" fill="#EEF6D2"/>
+    <ellipse cx="320" cy="244" rx="130" ry="110" fill="none" stroke="#FAF0E6" stroke-width="14"/>
+    <g stroke="#FAF0E6" stroke-width="12" stroke-linecap="round" transform="translate(320 244)">
+      <path d="M 0 0 L 160 0"/>
+      <path d="M 0 0 L 92 128"/>
+      <path d="M 0 0 L -80 140"/>
+      <path d="M 0 0 L 140 82" stroke-width="7" opacity="0.9"/>
+      <path d="M 0 0 L 10 152" stroke-width="7" opacity="0.9"/>
+    </g>
+  </g>
+  <!-- rind: two thirds of the oval, bold outline. Ellipse arc from 120° back around to 0°. -->
+  <g transform="translate(320 244)">
+    <path d="M 0 0 L -70.8 103.9 A 141.6 120 0 1 1 141.6 0 Z" fill="#00743F" stroke="#122B20" stroke-width="14" stroke-linejoin="round"/>
+    <!-- outer edge of the cut face -->
+    <path d="M 141.6 0 A 141.6 120 0 0 1 -70.8 103.9" fill="none" stroke="#122B20" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <!-- stem and two leaves -->
+  <g stroke="#122B20" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 320 126 L 320 96"/>
+    <path d="M 320 100 C 286 100, 244 78, 228 40 C 272 34, 314 58, 320 100 Z" fill="#25B396"/>
+    <path d="M 322 100 C 354 96, 396 70, 410 34 C 370 32, 332 58, 322 100 Z" fill="#00743F"/>
+  </g>
+</svg>

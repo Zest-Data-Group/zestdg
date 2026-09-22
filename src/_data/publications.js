@@ -1,17 +1,21 @@
 // Selected peer-reviewed work. `featured: true` promotes an entry to the top of
 // the publications page and onto the home page. Every other entry needs a
 // `category` key matching one in pubCategories.js; that decides which
-// dropdown it lands in. Citation counts are from Google
+// dropdown it lands in. Featured entries may carry `image` (a square thumbnail
+// in src/img/pubs/), `imageAlt`, and `imageCredit`. Citation counts are from Google
 // Scholar as of the date in pubStats.js; they are optional and can be dropped.
 module.exports = [
   {
-    featured: true,
+    category: "cwr",
     authors: "Khoury, C.K., Carver, D., Greene, S.L., Williams, K.A., Achicanoy, H.A., Schori, M., León, B., Wiersema, J.H., & Frances, A.",
     title: "Crop wild relatives of the United States require urgent conservation action",
     venue: "Proceedings of the National Academy of Sciences 117(52), 33351–33357",
     year: 2020,
     doi: "10.1073/pnas.2007029117",
     citations: 108,
+    image: "/img/pubs/pnas-cwr.jpg",
+    imageAlt: "Map of the United States shaded by number of crop wild relative taxa, densest in the East",
+    imageCredit: "Fig. 1 of the paper (CC BY-NC-ND)",
     note: "The national baseline assessment of US crop wild relatives — 600 taxa modeled, threat-assessed, and gap-analyzed.",
   },
   {
@@ -22,6 +26,9 @@ module.exports = [
     year: 2021,
     doi: "10.1111/ecog.05430",
     citations: 24,
+    image: "/img/pubs/gapanalysis.jpg",
+    imageAlt: "Conservation priority chart with urgent, high, medium, and low bands and species scores",
+    imageCredit: "Example output from the GapAnalysis package",
     note: "The open-source implementation of the gap analysis method, and the foundation the GAMMa tool builds on.",
   },
   {
@@ -30,6 +37,11 @@ module.exports = [
     title: "Conservation gap analysis for wild grapevines (Vitis L.) of the Americas",
     venue: "Plants, People, Planet",
     year: 2026,
+    doi: "10.1002/ppp3.70246",
+    citations: 1,
+    image: "/img/pubs/grapevines.jpg",
+    imageAlt: "Map of the south-central United States with the modeled range of Vitis acerifolia and its occurrence points",
+    imageCredit: "Predicted distribution of Vitis acerifolia, from the project's taxon summary report",
     note: "The most recent application of the workflow, extending the national assessment to a new genus.",
   },
   {
@@ -38,7 +50,11 @@ module.exports = [
     title: "Degradation of floodplain integrity within the contiguous United States",
     venue: "Communications Earth & Environment 4(1), 215",
     year: 2023,
+    doi: "10.1038/s43247-023-00877-4",
     citations: 42,
+    image: "/img/pubs/floodplain.jpg",
+    imageAlt: "Map of the United States colored by Index of Floodplain Integrity",
+    imageCredit: "Fig. 1 of the paper (CC BY)",
     note: "Continental-scale spatial assessment outside the crop wild relatives domain.",
   },
 

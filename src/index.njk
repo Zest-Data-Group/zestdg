@@ -5,51 +5,54 @@ mainClass: home
 <section class="hero">
   <img class="hero-logo" src="/img/logo.svg" alt="Zest Data Group logo: a lime with a quarter cut away and trailing bands of color" width="520" height="420">
   <h1>{{ site.tagline }}</h1>
-  <p class="lede">A geospatial consultancy. We build the analyses, applications, and open source tools that turn field data into decisions.</p>
-  <p class="cta"><a class="button" href="mailto:{{ site.email }}">Work with us</a> <a href="/projects/">See past projects</a></p>
+  <p class="lede">A geospatial consultancy focused on supporting plant conservation efforts.</p>
+  <p class="lede">We build analyses, applications, and open source tools that bring even more value to your hard-earned field data.</p>
 </section>
 
-<section class="services">
+<section class="offers">
   <h2>What we do</h2>
-  <div class="service-grid">
-    <div>
-      <h3>Spatial data analysis</h3>
-      <p>Species distribution models, gap analyses, and raster workflows at scale, in R and Google Earth Engine.</p>
+  {#- Each service sits on top of the project that best shows it. Hover slides the
+      panel right to reveal the project; the thumbnail always peeks out on the left. -#}
+  {% set offers = [
+    { title: "Spatial data analysis", text: "Species distribution models, conservation gap analysis, raster classification workflows, and statistical evaluations.", slug: "cwr-wild-grapes" },
+    { title: "Web application development", text: "Shiny applications that let non-technical teams map their own data.", slug: "gamma" },
+    { title: "Open source library development", text: "Turn research methods into documented and tested tools available to everyone.", slug: "gap-analysis-r" }
+  ] %}
+  {% set tones = ["green", "blue", "navy"] %}
+  {% for o in offers %}
+  {% set tone = tones[loop.index0] %}
+  {% for p in collections.projects %}{% if p.fileSlug == o.slug %}
+  <div class="offer tone-{{ tone }}">
+    <div class="panel">
+      <h3>{{ o.title }}</h3>
+      <p>{{ o.text }}</p>
     </div>
-    <div>
-      <h3>Web application development</h3>
-      <p>Shiny applications that let non-technical teams explore, map, and download their own data.</p>
-    </div>
-    <div>
-      <h3>Open source library development</h3>
-      <p>R packages that turn a research method into a documented, tested tool anyone can run.</p>
-    </div>
+    <a class="feature" href="{{ p.url }}">
+      {% set img = p.data.figure or p.data.thumb %}
+      {% if img %}<img class="thumb" src="{{ img }}" alt="{{ (p.data.figureAlt if p.data.figure else p.data.thumbAlt) or '' }}" width="320" height="320" loading="lazy">{% endif %}
+      <span class="feature-body">
+        <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
+        <strong>{{ p.data.title }}</strong>
+        <span>{{ p.data.summary }}</span>
+      </span>
+    </a>
   </div>
-</section>
-
-{% set featured = collections.projects | featured %}
-{% if featured.length %}
-<section class="featured">
-  <h2>Featured work</h2>
-  {% for p in featured %}
-  <a class="feature" href="{{ p.url }}">
-    {% if p.data.thumb %}<img class="thumb" src="{{ p.data.thumb }}" alt="{{ p.data.thumbAlt or '' }}" width="320" height="320" loading="lazy">{% endif %}
-    <span class="feature-body">
-      <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
-      <strong>{{ p.data.title }}</strong>
-      <span>{{ p.data.summary }}</span>
-    </span>
-  </a>
+  {% endif %}{% endfor %}
   {% endfor %}
-  <p><a href="/projects/">All projects &rarr;</a></p>
 </section>
-{% endif %}
 
 <section class="research">
-  <h2>Grounded in the research</h2>
   <div class="research-row">
-    <img class="thumb" src="/img/thumbs/hibiscus.jpg" alt="A white hibiscus with a crimson center" width="320" height="320" loading="lazy">
-    <p>Our methods come out of peer-reviewed work: {{ pubStats.citations }} citations
-       and an h-index of {{ pubStats.hIndex }}. <a href="/publications/">Selected publications &rarr;</a></p>
+    <img class="research-photo" src="/img/thumbs/hibiscus.jpg" alt="A white hibiscus with a crimson center" width="320" height="320" loading="lazy">
+    <div class="research-body">
+      <h2>Grounded in the research</h2>
+      <p class="lede">Our methods come out of peer-reviewed work on crop wild relatives, species distribution modeling, and conservation gap analysis.</p>
+      <dl class="research-stats">
+        <div><dd>{{ publications | length }}</dd><dt>peer-reviewed papers</dt></div>
+        <div><dd>{{ pubStats.citations }}</dd><dt>citations</dt></div>
+        <div><dd>{{ pubStats.hIndex }}</dd><dt>h-index</dt></div>
+      </dl>
+      <p><a href="/publications/">Selected publications &rarr;</a> <span class="research-note">Google Scholar, {{ pubStats.asOf }}</span></p>
+    </div>
   </div>
 </section>

@@ -26,13 +26,17 @@ description: Selected peer-reviewed publications in conservation science, spatia
 </section>
 
 <h2>Selected work</h2>
+<p class="page-note">Thumbnails are figures from the papers themselves.</p>
 <ol class="pubs">
 {% for p in publications | featuredPubs %}
-  <li class="pub pub-featured">
-    <p class="pub-title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-    <p class="pub-authors">{{ p.authors }}</p>
-    <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citations{% endif %}</p>
-    {% if p.note %}<p class="pub-note">{{ p.note }}</p>{% endif %}
+  <li class="pub pub-featured{% if p.image %} has-thumb{% endif %}">
+    {% if p.image %}<img class="thumb pub-thumb" src="{{ p.image }}" alt="{{ p.imageAlt or '' }}" title="{{ p.imageCredit or '' }}" width="320" height="320" loading="lazy">{% endif %}
+    <div class="pub-body">
+      <p class="pub-title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+      <p class="pub-authors">{{ p.authors }}</p>
+      <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citation{% if p.citations != 1 %}s{% endif %}{% endif %}</p>
+      {% if p.note %}<p class="pub-note">{{ p.note }}</p>{% endif %}
+    </div>
   </li>
 {% endfor %}
 </ol>
@@ -55,7 +59,7 @@ description: Selected peer-reviewed publications in conservation science, spatia
       <li class="pub">
         <p class="pub-title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
         <p class="pub-authors">{{ p.authors }}</p>
-        <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citations{% endif %}</p>
+        <p class="meta">{{ p.venue }} · {{ p.year }}{% if p.citations %} · {{ p.citations }} citation{% if p.citations != 1 %}s{% endif %}{% endif %}</p>
       </li>
     {% endfor %}
     </ol>

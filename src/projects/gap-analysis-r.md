@@ -1,13 +1,15 @@
 ---
-title: GapAnalysis — an R package for conservation gap analysis
+title: GapAnalysis R
 date: 2021-07-01
 featured: true
 client: Open source · published in Ecography
-summary: An R package that scores how well a species is conserved, ex situ and in situ, from occurrence records and a distribution model. The method behind the crop wild relatives assessments and GAMMa.
+summary: An R package that scores how well a species is conserved, ex situ and in situ, from occurrence records and a distribution model.
 tools: [R, terra, sf, CRAN]
 repo: https://github.com/CIAT-DAPA/GapAnalysis
 thumb: /img/thumbs/gold-bloom.jpg
 thumbAlt: A yellow flower in bloom
+figure: /img/figures/gap-analysis.jpg
+figureAlt: GapAnalysis conservation priority chart with urgent, high, medium, and low bands
 ---
 
 ## The problem

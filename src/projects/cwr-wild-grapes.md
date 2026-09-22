@@ -1,13 +1,15 @@
 ---
 title: Crop wild relatives of the United States
-date: 2023-06-01
+date: 2020-06-01
 featured: true
 client: Conservation gap analysis
-summary: Updated species distribution modeling and conservation gap analysis workflow for crop wild relatives, extending the 2020 PNAS assessment to new taxa.
+summary: Species distribution modeling and conservation gap analysis for all of the United States crop wild relatives.
 tools: [R, terra, sf, targets]
 repo: https://github.com/dcarver1/cwr_wildgrapes
 thumb: /img/thumbs/iris.jpg
 thumbAlt: A wild iris flowering in a meadow
+figure: /img/figures/cwr-wild-grapes.jpg
+figureAlt: Modeled range of Vitis acerifolia in the south-central United States with occurrence points
 ---
 
 ## The problem

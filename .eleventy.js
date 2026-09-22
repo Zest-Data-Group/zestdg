@@ -57,6 +57,25 @@ module.exports = function (eleventyConfig) {
     (pubs || []).filter((p) => p.category === key)
   );
 
+  // Every link that leaves the site opens in a new tab. Done once here at build
+  // time so markdown write-ups, publication data, and templates all get it.
+  // rel="noopener" keeps the new page from reaching back into this one.
+  const origin = new URL(site.url).origin;
+  eleventyConfig.addTransform("externalLinks", function (content) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    return content.replace(/<a\s[^>]*href="(https?:\/\/[^"]+)"[^>]*>/g, (tag, href) => {
+      if (href.startsWith(origin)) return tag;
+      let out = tag;
+      if (!/\btarget=/.test(out)) out = out.replace(/^<a\s/, '<a target="_blank" ');
+      if (/\brel="/.test(out)) {
+        if (!/\brel="[^"]*\bnoopener\b/.test(out)) out = out.replace(/\brel="/, 'rel="noopener ');
+      } else {
+        out = out.replace(/^<a\s/, '<a rel="noopener" ');
+      }
+      return out;
+    });
+  });
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes" },
     markdownTemplateEngine: "njk",

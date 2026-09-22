@@ -70,8 +70,12 @@ Status key: `[ ]` open · `[x]` done · `[-]` not needed
 
 - [x] **GitHub organization.** `Zest-Data-Group` created 2026-09-15; the site's
       GitHub link points at it.
-- [x] **Version control this folder.** Pushed to `Zest-Data-Group/zestdg` on
-      2026-09-15. The chart tool lives in `Zest-Data-Group/scholar-citations-chart`.
+- [ ] **Version control this folder.** Local git repos exist for this folder and
+      for `~/Documents/scholar-citations-chart`. Both were pushed to the org on
+      2026-09-15 and then pulled back at Dan's request: set to private, to be
+      deleted. Push again when ready. The publications page links to
+      `Zest-Data-Group/scholar-citations-chart`, so publish that repo before the
+      site goes live or change the link.
 - [ ] **Host the site.** Follow Path A in `DEPLOY.md`: connect the repo to
       Cloudflare Pages, Eleventy preset, build `npm run build`, output `_site`,
       `NODE_VERSION=20`, attach `zestdg.com` and `www.zestdg.com`. Run the
@@ -90,51 +94,9 @@ Status key: `[ ]` open · `[x]` done · `[-]` not needed
 - [ ] **Profiles.** LinkedIn company page; ORCID link on the About page.
       Google Business Profile is optional for a remote consultancy.
 
-## Website — open design and content work
+## Website
 
-Written 2026-09-15 after a working session. State of play: palette (linen ground,
-green and orange, blue accents), lime logo, JetBrains Mono, flower thumbnails,
-citations chart with cumulative toggle, publications grouped by topic, contact
-block on every page, live oak footer. Two repos are on the org.
-
-- [ ] **Pick a contact block.** Five options are mocked up in
-      `design/cta-options.html` (open it in a browser). A is the current blue
-      panel; B is a quiet rule and button; C a split card; D a centered
-      statement; E a full-bleed navy band. Once chosen, it is a small edit to the
-      `contact-block` markup in `src/_includes/base.njk` and its CSS.
-- [ ] **Figures on the projects page.** The list now shows a square image beside
-      each project and prefers a `figure:` path over the flower `thumb:`. Drop
-      images in `src/img/figures/` and set `figure:` in each project's front
-      matter. Candidates: a GAMMa screenshot (the app would not render in a
-      headless browser; capture it by hand), a map from the crop wild relatives
-      work, a GapAnalysis output map. Use figures you made; journal-typeset
-      figures may carry the publisher's copyright even for open-access papers.
-- [ ] **Contributors on the About page.** Ian and Gavin Hawkes are listed with
-      placeholder roles. `src/_data/contributors.js` has TODOs for Ian's surname,
-      role wording, a sentence of bio, and links. Set `listed: false` for anyone
-      who has not agreed before the site goes live.
-- [ ] **Font decision.** The whole site is JetBrains Mono, the font this Omarchy
-      install uses. omarchy.org itself pairs Geist for text with JetBrains Mono
-      for code. If the all-mono look tires, the switch is one line in
-      `src/css/style.css` plus the Google Fonts link in `base.njk`. Note the site
-      now loads a font from Google; self-host the two woff2 files if that matters.
-- [ ] **Logo refinement.** `src/img/logo.svg` is a first pass. Open questions:
-      band shape (taper or curve), whether the cut quarter should sit top-right,
-      a lighter lime green for the body. Then export the favicon PNG set and the
-      square mark for GitHub and LinkedIn (see Icon and logo package above).
-      Delete `src/img/dragon.svg` once the lime is final.
-- [ ] **Confirm the GapAnalysis repo link.** `src/projects/gap-analysis-r.md`
-      points at `github.com/CIAT-DAPA/GapAnalysis`. Verify, or point at CRAN.
-- [ ] **Review the publication groups.** Topic assignments are in
-      `src/_data/publications.js` (`category`) and the group names and blurbs in
-      `src/_data/pubCategories.js`. They were assigned from titles and venues.
-- [ ] **Keep the Scholar numbers in one place.** The same per-year counts live in
-      `src/_data/pubStats.js` (site) and `data.js` in the chart repo. When you
-      refresh from Scholar, update both, or have the site copy from the repo.
-- [ ] **About page revamp.** Parked; the current layout is acceptable for launch.
-- [ ] **Chart repo polish.** Enable GitHub Pages on `scholar-citations-chart` so
-      people can try it without downloading; test the download buttons in
-      Firefox and Safari; add a cumulative-mode screenshot to the README.
+The site's own task list is in `TODO.md`.
 
 ## Collaborators (Ian and Gavin)
 

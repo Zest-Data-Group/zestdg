@@ -1,7 +1,7 @@
-// People shown on the About page.
+// People shown under "Who we are" on the About page.
 //
-// To add a collaborator, copy a block below. `image` is optional — leave it out
-// and the entry renders as text only. Put photos in src/img/ and reference them
+// To add someone, copy a block below. `image` is optional — leave it out and
+// the entry renders as text only. Put photos in src/img/ and reference them
 // as "/img/filename.jpg". Order here is the order on the page.
 module.exports = [
   {
@@ -13,20 +13,38 @@ module.exports = [
       { label: "GitHub", url: "https://github.com/dcarver1" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/daniel-carver-0439a7113/" },
     ],
-    bio: `Dan has spent a decade building the spatial models behind conservation
-      decisions — species distributions, gap analyses, and the pipelines that keep
-      them reproducible. He is technical manager at Colorado State University's
-      Geospatial Centroid and has worked with the USDA Agricultural Research
-      Service on crop wild relatives since 2018, with a masters in applied
-      geography from CU Denver and degrees in geology and physical geography from
-      Adams State.`,
+    bio: `After 300 nights in the field over five years, Dan left his outdoor
+      recreation jobs behind to pursue a master's degree in geography at the
+      University of Colorado Denver. After graduating, an internship with NASA
+      DEVELOP turned into a job that set the stage for a career in Fort Collins,
+      Colorado. Since then Dan has used his skills in facilitation, public
+      speaking, and programming to bring spatial data analysis methods to a wide
+      variety of project teams. He currently contributes to the Geospatial
+      Centroid at Colorado State University in addition to his role at Zest Data
+      Group.`,
   },
-
-  // {
-  //   name: "Collaborator name",
-  //   role: "What they do on projects",
-  //   image: "/img/their-photo.jpg",
-  //   links: [{ label: "Website", url: "https://example.com" }],
-  //   bio: `A sentence or two on their background and what they bring.`,
-  // },
+  {
+    name: "Ian Hellman",
+    role: "FAA-certified drone pilot and instructor",
+    image: "/img/ian-hellman.jpg",
+    links: [],
+    // TODO: Dan's draft ended mid-sentence with where Ian currently contributes.
+    bio: `Ian is an FAA-certified drone pilot who teaches the FAA pilot
+      certification courses. He brings extensive experience in aerial imagery
+      processing and in managing watershed science field teams, and has
+      developed and maintained compute systems to process and securely back up
+      terabytes of imagery.`,
+  },
+  {
+    name: "Gavin Hawkes",
+    role: "Computer science undergraduate, Colorado State University",
+    image: "/img/gavin-hawkes.jpg",
+    links: [],
+    bio: `Gavin has brought his understanding of computer science to a few
+      important geospatial questions, like how road design and roadside signs
+      can be used to predict traffic incidents. He is currently contributing to
+      Zest Data Group as the primary developer of a QGIS plugin that simplifies
+      the generation of training and validation datasets for remote sensing
+      classification projects.`,
+  },
 ];
