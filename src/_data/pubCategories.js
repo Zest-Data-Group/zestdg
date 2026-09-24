@@ -14,7 +14,7 @@ module.exports = [
   {
     key: "remote-sensing",
     label: "Remote sensing and spatial methods",
-    blurb: "Detecting vegetation from imagery, checking land-cover products, and teaching the workflow.",
+    blurb: "Detecting vegetation from imagery, checking land-cover products, and teaching the remote sensing.",
   },
   {
     key: "landscape",

@@ -116,10 +116,36 @@ live oak photo in the footer. `npm run verify` builds and checks links.
 
 ## Chart repo (`~/Documents/scholar-citations-chart`)
 
-- [ ] Commit the pending `style.css` change and push to the org (see Do first).
-- [ ] Enable GitHub Pages on it so people can try it without downloading.
-- [ ] Test the Download SVG and Download PNG buttons in Firefox and Safari.
-- [ ] Add a cumulative-mode screenshot to the README.
+Rewritten 2026-09-22 as a two-step pipeline: `fetch_scholar.py` (Python,
+`scholarly`, run with `uv run`) pulls a profile's per-year citations and its
+top papers into JSON; `chart.R` (plotly) draws an interactive HTML chart. The
+hand-entry JavaScript version moved to `legacy-js/`. Verified end to end
+against Dan's profile. Uncommitted in that repo.
+
+- [ ] Commit and push the rewrite, which now also includes a Shiny app
+      (`app/app.R`, OpenAlex-backed, tested locally 2026-09-22) and an
+      OpenAlex command-line fetcher.
+- [ ] **Host the Shiny app on the PureVoltage server** (169.197.86.245), which
+      is already set up to mimic a shinyapps.io-style environment. Decided
+      2026-09-22; deferred, and Dan has a few changes to make on that server
+      first. When it happens: deploy `app/` with `R/` and `fetch_openalex.R`
+      alongside it, set `OPENALEX_MAILTO`, put it behind a Cloudflare Tunnel or
+      proxy at a subdomain such as tools.zestdg.com, then link it from the
+      publications page and, if wanted, add a Tools entry to the nav.
+- [x] **Site keeps the JavaScript chart** (decided 2026-09-22). The chart repo
+      is R and Python only; its JavaScript version was removed, and the site's
+      `src/js/citation-chart.js` is now the only copy. The publications-page
+      blurb was reworded to describe the new tool.
+- [ ] **Refresh `src/_data/pubStats.js` from a fetch.** The Python fetcher's
+      JSON has the same years and papers; a small script could update the
+      counts, `asOf`, h-index, and per-paper `byYear` while keeping the
+      hand-written short labels and DOIs. Until then, update it by hand.
+- [x] Add a screenshot of the plotly chart to the chart repo README.
+- [-] GitHub Pages for the chart repo: no longer a fit, since the tool runs
+      locally rather than in the browser.
+- [-] The citations form mockup (`design/citations-tool-mockup.html`) was
+      rejected 2026-09-22 in favor of the automated pipeline; delete the file
+      when convenient.
 
 ## Launch checklist
 

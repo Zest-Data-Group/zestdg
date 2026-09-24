@@ -16,7 +16,7 @@ module.exports = [
     image: "/img/pubs/pnas-cwr.jpg",
     imageAlt: "Map of the United States shaded by number of crop wild relative taxa, densest in the East",
     imageCredit: "Fig. 1 of the paper (CC BY-NC-ND)",
-    note: "The national baseline assessment of US crop wild relatives — 600 taxa modeled, threat-assessed, and gap-analyzed.",
+    note: "The national baseline assessment of US crop wild relatives — 600 taxa evaluated.",
   },
   {
     featured: true,
@@ -42,7 +42,7 @@ module.exports = [
     image: "/img/pubs/grapevines.jpg",
     imageAlt: "Map of the south-central United States with the modeled range of Vitis acerifolia and its occurrence points",
     imageCredit: "Predicted distribution of Vitis acerifolia, from the project's taxon summary report",
-    note: "The most recent application of the workflow, extending the national assessment to a new genus.",
+    note: "The most recent application of the conservation gap analysis workflow, extending the national assessment to a single genus.",
   },
   {
     featured: true,
@@ -55,7 +55,7 @@ module.exports = [
     image: "/img/pubs/floodplain.jpg",
     imageAlt: "Map of the United States colored by Index of Floodplain Integrity",
     imageCredit: "Fig. 1 of the paper (CC BY)",
-    note: "Continental-scale spatial assessment outside the crop wild relatives domain.",
+    note: "Continental-scale spatial data assessment outside the crop wild relatives domain.",
   },
 
   {

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mockup: citations chart tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/style.css">
+  <style>
+    /* Mockup-only styles for the form. Everything else is the live site stylesheet. */
+    .tool { display: grid; grid-template-columns: minmax(20rem, 26rem) 1fr; gap: 2.5rem 3rem; align-items: start; margin-top: 2rem; }
+    @media (max-width: 860px) { .tool { grid-template-columns: 1fr; } }
+    .tool-form fieldset { border: 1px solid var(--mist); border-radius: 12px; padding: 1rem 1.25rem 1.25rem; margin: 0 0 1.25rem; min-width: 0; }
+    .tool-form legend { font-weight: 600; padding: 0 0.4rem; }
+    .tool-form label { display: block; font-size: 0.9rem; margin: 0.6rem 0 0.2rem; }
+    .tool-form input[type="text"], .tool-form input[type="number"] {
+      font: inherit; width: 100%; box-sizing: border-box; padding: 0.4rem 0.6rem;
+      border: 1px solid var(--mist); border-radius: 6px; background: var(--paper); color: var(--ink);
+    }
+    .tool-form input[type="number"] { width: 5.5rem; text-align: right; }
+    .tool-form input:focus-visible { outline: 3px solid var(--link); outline-offset: 1px; }
+    .paper { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0.4rem 0.6rem; align-items: center; margin-top: 0.6rem; }
+    .paper .key { width: 12px; height: 4px; border-radius: 2px; }
+    .paper input { grid-column: 2; }
+    .years { width: 100%; border-collapse: collapse; margin-top: 0.75rem; font-size: 0.92rem; }
+    .years th { text-align: left; font-weight: 600; padding: 0.3rem 0.4rem 0.4rem 0; border-bottom: 1px solid var(--mist); vertical-align: bottom; }
+    .years th .key { display: inline-block; vertical-align: middle; margin-right: 0.3rem; }
+    .years td { padding: 0.25rem 0.4rem 0.25rem 0; }
+    .years td input[type="number"] { width: 4.6rem; }
+    .years .yr { font-weight: 600; white-space: nowrap; }
+    .years .partial { font-size: 0.8rem; white-space: nowrap; }
+    .add { background: none; border: 1px dashed var(--mist); border-radius: 999px; padding: 0.3rem 0.9rem; font: inherit; font-size: 0.85rem; color: var(--link); cursor: pointer; margin-top: 0.75rem; }
+    .tool-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 0; }
+    .tool-actions .quiet { background: none; border: 0; padding: 0; font: inherit; color: var(--link); text-decoration: underline; cursor: pointer; }
+    .tool-out { min-width: 0; position: sticky; top: 1rem; }
+    .tool-out h2 { font-size: 1.15rem; margin-top: 0; }
+    .export { display: flex; gap: 0.6rem; margin-top: 1rem; }
+    .export button { font: inherit; font-size: 0.9rem; padding: 0.45rem 1rem; border-radius: 999px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; }
+    .export button:first-child { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .howto { margin-top: 1.5rem; border-top: 1px solid var(--mist); padding-top: 1rem; }
+    .howto summary { cursor: pointer; font-weight: 600; }
+    .howto ol { padding-left: 1.2rem; }
+    .howto li { margin: 0.4rem 0; }
+    @media (max-width: 560px) {
+      .years td input[type="number"] { width: 3.4rem; padding: 0.35rem 0.3rem; }
+      .years td, .years th { padding-right: 0.2rem; }
+      .tool-form fieldset { padding: 0.9rem 0.9rem 1rem; }
+    }
+    .years-wrap { overflow-x: auto; }
+    .mock-banner { background: var(--navy); color: var(--paper); font-size: 0.85rem; padding: 0.4rem 1rem; text-align: center; }
+  </style>
+</head>
+<body>
+<p class="mock-banner">Mockup — static layout for review. The chart on the right is live (your current numbers); the form does not drive it yet.</p>
+<header class="site-head">
+  <a class="brand" href="#"><img src="../src/img/logo.svg" alt="" width="54" height="44"> Zest Data Group</a>
+  <nav><a href="#">Projects</a> <a href="#">Publications</a> <a href="#" aria-current="page">Tools</a> <a href="#">About</a> <a href="#">GitHub</a></nav>
+</header>
+<main>
+  <p class="meta">Tools</p>
+  <h1>Citations over time</h1>
+  <p class="lede">Type in the numbers from your Google Scholar profile and get a clean chart of citations per year, with your most-cited papers drawn on top. Download it as SVG or PNG. Nothing leaves your browser.</p>
+
+  <div class="tool">
+    <form class="tool-form" onsubmit="return false">
+      <fieldset>
+        <legend>Profile</legend>
+        <label for="name">Name (shown in the chart title)</label>
+        <input type="text" id="name" value="Dan Carver">
+        <label for="asof">Numbers as of</label>
+        <input type="text" id="asof" value="September 2026" placeholder="Month year">
+      </fieldset>
+
+      <fieldset>
+        <legend>Papers to draw as lines (up to three)</legend>
+        <p class="page-note" style="margin:0.25rem 0 0">Give each a short label for the legend. A DOI turns the label into a link.</p>
+        <div class="paper"><span class="key" style="background:var(--orange)"></span><input type="text" value="Crop wild relatives of the US (PNAS)" aria-label="Paper 1 label"><input type="text" value="10.1073/pnas.2007029117" placeholder="DOI (optional)" aria-label="Paper 1 DOI"></div>
+        <div class="paper"><span class="key" style="background:var(--blue)"></span><input type="text" value="Wild chile peppers (Diversity and Distributions)" aria-label="Paper 2 label"><input type="text" value="10.1111/ddi.13008" placeholder="DOI (optional)" aria-label="Paper 2 DOI"></div>
+        <div class="paper"><span class="key" style="background:var(--teal)"></span><input type="text" value="Wild mint germplasm (Frontiers in Plant Science)" aria-label="Paper 3 label"><input type="text" value="10.3389/fpls.2020.01217" placeholder="DOI (optional)" aria-label="Paper 3 DOI"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Citations per year</legend>
+        <p class="page-note" style="margin:0.25rem 0 0">One row per year. Leave a paper's cell blank for years before it was published.</p>
+        <div class="years-wrap"><table class="years">
+          <thead><tr><th>Year</th><th>All papers</th><th><span class="key" style="background:var(--orange)"></span>1</th><th><span class="key" style="background:var(--blue)"></span>2</th><th><span class="key" style="background:var(--teal)"></span>3</th></tr></thead>
+          <tbody>
+            <tr><td class="yr">2019</td><td><input type="number" value="9"></td><td><input type="number"></td><td><input type="number"></td><td><input type="number"></td></tr>
+            <tr><td class="yr">2020</td><td><input type="number" value="30"></td><td><input type="number"></td><td><input type="number" value="13"></td><td><input type="number" value="1"></td></tr>
+            <tr><td class="yr">2021</td><td><input type="number" value="63"></td><td><input type="number" value="15"></td><td><input type="number" value="10"></td><td><input type="number" value="7"></td></tr>
+            <tr><td class="yr">2022</td><td><input type="number" value="92"></td><td><input type="number" value="29"></td><td><input type="number" value="13"></td><td><input type="number" value="14"></td></tr>
+            <tr><td class="yr">2023</td><td><input type="number" value="92"></td><td><input type="number" value="26"></td><td><input type="number" value="12"></td><td><input type="number" value="12"></td></tr>
+            <tr><td class="yr">2024</td><td><input type="number" value="100"></td><td><input type="number" value="11"></td><td><input type="number" value="12"></td><td><input type="number" value="8"></td></tr>
+            <tr><td class="yr">2025</td><td><input type="number" value="100"></td><td><input type="number" value="12"></td><td><input type="number" value="15"></td><td><input type="number" value="12"></td></tr>
+            <tr><td class="yr">2026 <label class="partial"><input type="checkbox" checked> to date</label></td><td><input type="number" value="72"></td><td><input type="number" value="13"></td><td><input type="number" value="6"></td><td><input type="number" value="9"></td></tr>
+          </tbody>
+        </table></div>
+        <button type="button" class="add">+ Add a year</button>
+      </fieldset>
+
+      <p class="tool-actions">
+        <button type="button" class="button" style="margin:0">Copy a link to this chart</button>
+        <button type="button" class="quiet">Load the example</button>
+        <button type="button" class="quiet">Clear</button>
+      </p>
+    </form>
+
+    <section class="tool-out" aria-label="Your chart">
+      <h2>Dan Carver: citations over time</h2>
+      <figure id="citation-chart" class="chart"></figure>
+      <div id="citation-export" class="export"></div>
+      <details class="howto">
+        <summary>Where to find these numbers on Google Scholar</summary>
+        <ol>
+          <li>Open your profile. The <strong>Cited by</strong> bar chart on the right shows citations per year; hover each bar to read it. Those go in <em>All papers</em>.</li>
+          <li>Click a paper's title. Its page has the same chart for that paper alone; hover the bars and enter them in that paper's column.</li>
+          <li>Tick <em>to date</em> on the current year so it is drawn hatched.</li>
+        </ol>
+      </details>
+      <p class="page-note">Your numbers are saved in this browser so they are here next time. The share link packs them into the address, so no account and no server. The chart script is <a href="#">open source</a>.</p>
+    </section>
+  </div>
+</main>
+<script type="application/json" id="citation-data">[{"year":2019,"citations":9},{"year":2020,"citations":30},{"year":2021,"citations":63},{"year":2022,"citations":92},{"year":2023,"citations":92},{"year":2024,"citations":100},{"year":2025,"citations":100},{"year":2026,"citations":72,"partial":true}]</script>
+<script type="application/json" id="citation-series">[{"short":"Crop wild relatives of the US (PNAS)","doi":"10.1073/pnas.2007029117","byYear":{"2021":15,"2022":29,"2023":26,"2024":11,"2025":12,"2026":13}},{"short":"Wild chile peppers (Diversity and Distributions)","doi":"10.1111/ddi.13008","byYear":{"2020":13,"2021":10,"2022":13,"2023":12,"2024":12,"2025":15,"2026":6}},{"short":"Wild mint germplasm (Frontiers in Plant Science)","doi":"10.3389/fpls.2020.01217","byYear":{"2020":1,"2021":7,"2022":14,"2023":12,"2024":8,"2025":12,"2026":9}}]</script>
+<script src="../src/js/citation-chart.js" defer></script>
+</body>
+</html>

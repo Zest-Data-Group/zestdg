@@ -30,11 +30,6 @@ contribution.
 - **Science is a progress report.** As you learn more, your perspective
   changes, and we adapt.
 
-A successful project is one where the partner has a web-accessible means of
-evaluating the work they helped design through rounds of feedback. The data
-meets them in the format they find most useful, and the project lives in a
-place where it can be updated over time.
-
 ## Who we are
 
 {# Kept flush-left: indented tags would be wrapped in <p> by the markdown pass. #}
@@ -54,12 +49,12 @@ place where it can be updated over time.
 
 ## Working with us
 
-We do our best work on scoped projects with room to iterate. Our tools are R
-(terra, sf, targets, Shiny), Google Earth Engine, Python, and Git, chosen to
-fit the data and the team that will maintain the result. We have our own data
-storage, compute, and hosting infrastructure that we can deploy to your
-project.
+We do our best work on scoped projects with room to iterate. Our tools are R,
+Python, Git, and a focus on communication.
+
+We have our own data storage, compute, local AI inference, and hosting
+infrastructure that we can deploy for your project.
 
 Work starts with a short call, then a written proposal with deliverables and a
-timeline. From the first week the code lives in a shared repository, so you own
-everything as it is made.
+timeline. From the first week our plan and code live in a shared repository, so
+all process is visible.
