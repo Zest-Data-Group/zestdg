@@ -2,7 +2,7 @@
 title: Crop wild relatives of the United States
 date: 2020-06-01
 featured: true
-client: Conservation gap analysis
+client: Conservation gap analysis · USDA National Laboratory for Genetic Resources Preservation
 summary: Species distribution modeling and conservation gap analysis for all of the United States crop wild relatives.
 tools: [R, terra, sf, targets]
 repo: https://github.com/dcarver1/cwr_wildgrapes

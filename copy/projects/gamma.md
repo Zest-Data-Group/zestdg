@@ -1,18 +1,24 @@
----
-title: GAMMa
-date: 2026-08-01
-featured: true
-client: Atlanta Botanical Garden & Botanical Garden Conservation International
-summary: A web application that allows users to view the extent of their own collection against the data available on GBIF.
-tools: [R, Shiny, leaflet, sf, terra, GBIF]
-link: https://shiny.carverd.com/app/gamma
-# repo: points at the org for now; update to the project repository once it is
-# migrated into the Zest Data Group GitHub.
-repo: https://github.com/Zest-Data-Group
-thumb: /img/thumbs/poppy.jpg
-thumbAlt: A California poppy in bloom
-figure: /img/figures/gamma.jpg
-figureAlt: The GAMMa landing page, "Observing the meta collection"
+# GAMMa — editable copy
+
+Source: `src/projects/gamma.md`. This text feeds both the expandable card on
+the projects page and the standalone page at `/projects/gamma/`. Edit the
+text here; the wording will be ported back into that file. Front matter that
+is not prose (dates, image paths, tools list) is omitted.
+
+**Title:** GAMMa
+**Date shown:** August 2026
+**Client line:** Atlanta Botanical Garden & Botanical Garden Conservation International
+**Tools:** R, Shiny, leaflet, sf, terra, GBIF
+**Link:** Open the application → https://shiny.carverd.com/app/gamma
+**GitHub:** Source on GitHub → https://github.com/Zest-Data-Group
+<!-- The GitHub link points at the org for now. Update it once the repository is migrated into the Zest Data Group GitHub. -->
+
+**Summary (card line, also the search snippet):**
+A web application that allows users to view the extent of their own collection against the data available on GBIF.
+
+**Figure caption (alt text):**
+The GAMMa landing page, "Observing the meta collection"
+
 ---
 
 Botanic Gardens and Gene Banks play an essential role in preserving species
@@ -28,6 +34,7 @@ provide guidance on where additional collection excursions may be most valuable
 in improving the coverage of a species' living collection.
 
 ## What GAMMa does
+
 GAMMa compares a species' accession records against wild occurrence records for
 the same taxon, then scores how much of the wild range the current **ex situ**
 collection actually covers. This is possible by pulling records directly from
@@ -58,15 +65,19 @@ to help ensure work within the application can be saved. These files are saved
 to your computer, not the device on which the application is hosted.
 
 ## How it was built
+
 An R and Shiny application, modularized by analysis stage, with leaflet for the
 interactive mapping, sf and terra for the spatial work, rgbif for occurrence
 retrieval against the GBIF Backbone Taxonomy, and R Markdown for report
 generation. The gap analysis itself extends the methodology of the
-[GapAnalysis R package](https://github.com/CIAT-DAPA/GapAnalysis) — the same
-lineage as the [crop wild relatives work](/projects/cwr-wild-grapes/) — reworked
+GapAnalysis R package — the same
+lineage as the crop wild relatives work — reworked
 so that a collections manager, not a programmer, is the intended operator.
 
+<!-- Links in the paragraph above: "GapAnalysis R package" → https://github.com/CIAT-DAPA/GapAnalysis; "crop wild relatives work" → /projects/cwr-wild-grapes/ -->
+
 ## Outcome
+
 GAMMa is in public beta. The project has been in development since 2024, and
 multiple workshops with botanically interested individuals have resulted in a
 wide suite of feedback that has changed the vision and direction of the tool
