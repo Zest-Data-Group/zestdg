@@ -8,7 +8,8 @@ tools list) is omitted.
 
 **Title:** Crop wild relatives of the United States
 **Date shown:** June 2020
-**Client line:** Conservation gap analysis · USDA National Laboratory for Genetic Resources Preservation
+**Client line:** Conservation gap analysis · USDA ARS National Laboratory for Genetic Resources Preservation (NLGRP)
+<!-- link: USDA ARS National Laboratory for Genetic Resources Preservation (NLGRP) → https://www.ars.usda.gov/plains-area/fort-collins-co/center-for-agricultural-resources-research/paagrpru/ -->
 **Tools:** R, terra, sf, targets
 **Link:** Source on GitHub → https://github.com/dcarver1/cwr_wildgrapes
 
@@ -32,7 +33,7 @@ A modernized modeling workflow covering occurrence data cleaning, species distri
 
 Reusable methods applied to additional species groups, with a companion repository (cwrSDM) adapting the Aichi Target 13 codebase for ongoing work. The wild grapevine assessment was published in *Plants, People, Planet*, and the same methodology now underpins GAMMa, a web application bringing gap analysis to botanic garden collections.
 
-<!-- Links in the paragraph above: "cwrSDM" → https://github.com/dcarver1/cwrSDM; "GAMMa" → /projects/gamma/ -->
+<!-- Links in the paragraph above: "cwrSDM" → https://github.com/dcarver1/cwrSDM; "published in Plants, People, Planet" → https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.70246; "GAMMa" → /projects/gamma/. In "The problem": "2020 PNAS assessment" → https://doi.org/10.1073/pnas.2007029117. In "What was built"/Outcome: "Aichi Target 13" → https://www.cbd.int/aichi-targets/target/13 -->
 
 ### Publication
 
@@ -40,3 +41,4 @@ Carver, D., Khoury, C.K., Frances, A., McCarry, N., Diaz-Garcia, L., Galarneau, 
 Gora, S., Haidet, M., Heinitz, C., Knapp, W., Meyer, A., Miller, A., Mims, R.,
 Sapkota, S., Spurrier, C., & Wen, J. (2026). Conservation gap analysis for wild
 grapevines (*Vitis* L.) of the Americas. *Plants, People, Planet*.
+doi:10.1002/ppp3.70246 → https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.70246

@@ -19,19 +19,24 @@ Selected geospatial and R development work — GAMMa, the crop wild relatives as
 Selected work in conservation science and spatial modeling. All of it is open source — repositories are linked from each write-up.
 
 <!-- Cards, newest first. Title · year · client, then the summary line.
+     Client lines may carry markdown links; they render on the cards and
+     standalone pages and are stripped on the home page panels.
      These lines come from the front matter of each src/projects/*.md file
      and are repeated in the matching copy/projects/ file. -->
 
 **GAMMa**
-2026 · Atlanta Botanical Garden & Botanical Garden Conservation International
+2026 · Atlanta Botanical Garden & Botanic Gardens Conservation International
+<!-- links: Atlanta Botanical Garden → https://www.atlantabg.org/; Botanic Gardens Conservation International → https://www.bgci.org/ -->
 A web application that allows users to view the extent of their own collection against the data available on GBIF.
 
 **GapAnalysis R**
-2021 · Open source · published in Ecography · originally funded by CIAT Decision and Policy Analysis
+2021 · Open source · published in Ecography · originally funded by CIAT Decision and Policy Analysis (DAPA)
+<!-- link: CIAT Decision and Policy Analysis (DAPA) → https://github.com/CIAT-DAPA/ -->
 An R package that scores how well a species is conserved, ex situ and in situ, from occurrence records and a distribution model.
 
 **Crop wild relatives of the United States**
-2020 · Conservation gap analysis · USDA National Laboratory for Genetic Resources Preservation
+2020 · Conservation gap analysis · USDA ARS National Laboratory for Genetic Resources Preservation (NLGRP)
+<!-- link: USDA ARS National Laboratory for Genetic Resources Preservation (NLGRP) → https://www.ars.usda.gov/plains-area/fort-collins-co/center-for-agricultural-resources-research/paagrpru/ -->
 Species distribution modeling and conservation gap analysis for all of the United States crop wild relatives.
 
 <!-- Shown only if there are no projects; not currently visible. -->

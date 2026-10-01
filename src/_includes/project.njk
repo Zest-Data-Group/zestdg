@@ -5,7 +5,7 @@ layout: base.njk
   <header class="project-header">
     <div>
       <p class="meta">
-        <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if client %} · {{ client }}{% endif %}
+        <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if client %} · {{ client | mdInline | safe }}{% endif %}
       </p>
       <h1>{{ title }}</h1>
       {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}

@@ -8,7 +8,8 @@ tools list) is omitted.
 
 **Title:** GapAnalysis R
 **Date shown:** July 2021
-**Client line:** Open source · published in Ecography · originally funded by CIAT Decision and Policy Analysis
+**Client line:** Open source · published in Ecography · originally funded by CIAT Decision and Policy Analysis (DAPA)
+<!-- link: CIAT Decision and Policy Analysis (DAPA) → https://github.com/CIAT-DAPA/ -->
 **Tools:** R, terra, sf, CRAN
 **Link:** Source on GitHub → https://github.com/CIAT-DAPA/GapAnalysis
 

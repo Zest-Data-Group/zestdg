@@ -7,7 +7,8 @@ is not prose (dates, image paths, tools list) is omitted.
 
 **Title:** GAMMa
 **Date shown:** August 2026
-**Client line:** Atlanta Botanical Garden & Botanical Garden Conservation International
+**Client line:** Atlanta Botanical Garden & Botanic Gardens Conservation International
+<!-- links: Atlanta Botanical Garden → https://www.atlantabg.org/; Botanic Gardens Conservation International → https://www.bgci.org/ -->
 **Tools:** R, Shiny, leaflet, sf, terra, GBIF
 **Link:** Open the application → https://shiny.carverd.com/app/gamma
 **GitHub:** Source on GitHub → https://github.com/Zest-Data-Group
@@ -77,6 +78,8 @@ so that a collections manager, not a programmer, is the intended operator.
 <!-- Links in the paragraph above: "GapAnalysis R package" → https://github.com/CIAT-DAPA/GapAnalysis; "crop wild relatives work" → /projects/cwr-wild-grapes/ -->
 
 ## Outcome
+
+<!-- Links in the second paragraph below: Atlanta Botanical Garden → https://www.atlantabg.org/; The Morton Arboretum → https://mortonarb.org/; Montgomery Botanical Center → https://www.montgomerybotanical.org/; New York Botanical Garden → https://www.nybg.org/; BGCI-US (both) → https://www.bgci.org/; Institute of Museum and Library Services → https://www.imls.gov/; award MG-252894-OMS-23 → https://www.imls.gov/grants/awarded/mg-252894-oms-23; United States Botanic Garden → https://www.usbg.gov/. Also: first GBIF in "What GAMMa does" → https://www.gbif.org/ -->
 
 GAMMa is in public beta. The project has been in development since 2024, and
 multiple workshops with botanically interested individuals have resulted in a

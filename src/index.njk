@@ -31,7 +31,7 @@ mainClass: home
       {% set img = p.data.figure or p.data.thumb %}
       {% if img %}<img class="thumb" src="{{ img }}" alt="{{ (p.data.figureAlt if p.data.figure else p.data.thumbAlt) or '' }}" width="320" height="320" loading="lazy">{% endif %}
       <span class="feature-body">
-        <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
+        <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client | plainText }}{% endif %}</span>
         <strong>{{ p.data.title }}</strong>
         <span>{{ p.data.summary }}</span>
       </span>

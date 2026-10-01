@@ -17,7 +17,7 @@ description: Selected geospatial and R development work — GAMMa, the crop wild
         {% if img %}<img class="thumb" src="{{ img }}" alt="" width="320" height="320" loading="lazy">{% endif %}
         <span class="project-head">
           <strong>{{ p.data.title }}</strong>
-          <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client }}{% endif %}</span>
+          <span class="meta"><time datetime="{{ p.date | isoDate }}">{{ p.date | year }}</time>{% if p.data.client %} · {{ p.data.client | mdInline | safe }}{% endif %}</span>
           <span class="project-summary">{{ p.data.summary }}</span>
         </span>
       </summary>

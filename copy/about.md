@@ -40,7 +40,7 @@ contribution.
 <!-- Bios live in src/_data/team.js. Name and role are shown as a heading and a subline. -->
 
 ### Dan Carver
-*Founder, spatial scientist*
+*Owner, spatial scientist*
 
 After 300 nights in the field over five years, Dan started a master's degree in geography at the
 University of Colorado Denver. An internship with NASA

@@ -2,7 +2,7 @@
 title: GAMMa
 date: 2026-08-01
 featured: true
-client: Atlanta Botanical Garden & Botanical Garden Conservation International
+client: "[Atlanta Botanical Garden](https://www.atlantabg.org/) & [Botanic Gardens Conservation International](https://www.bgci.org/)"
 summary: A web application that allows users to view the extent of their own collection against the data available on GBIF.
 tools: [R, Shiny, leaflet, sf, terra, GBIF]
 link: https://shiny.carverd.com/app/gamma
@@ -31,7 +31,7 @@ in improving the coverage of a species' living collection.
 GAMMa compares a species' accession records against wild occurrence records for
 the same taxon, then scores how much of the wild range the current **ex situ**
 collection actually covers. This is possible by pulling records directly from
-GBIF inside the tool or uploading your own accession data as a spreadsheet. The
+[GBIF](https://www.gbif.org/) inside the tool or uploading your own accession data as a spreadsheet. The
 tool enables individuals to clean the records interactively on a map and table,
 run a conservation gap analysis, and generate a report to share with others.
 
@@ -72,8 +72,11 @@ multiple workshops with botanically interested individuals have resulted in a
 wide suite of feedback that has changed the vision and direction of the tool
 over time.
 
-The work was initiated in 2023 by the Atlanta Botanical Garden, The Morton
-Arboretum, and the Montgomery Botanical Center, with a core team drawn from those
-institutions plus Zest Data Group, the New York Botanical Garden, and BGCI-US.
-It is supported by the Institute of Museum and Library Services (award
-MG-252894-OMS-23), BGCI-US, and the United States Botanic Garden.
+The work was initiated in 2023 by the [Atlanta Botanical Garden](https://www.atlantabg.org/),
+[The Morton Arboretum](https://mortonarb.org/), and the
+[Montgomery Botanical Center](https://www.montgomerybotanical.org/), with a core
+team drawn from those institutions plus Zest Data Group, the
+[New York Botanical Garden](https://www.nybg.org/), and [BGCI-US](https://www.bgci.org/).
+It is supported by the [Institute of Museum and Library Services](https://www.imls.gov/)
+(award [MG-252894-OMS-23](https://www.imls.gov/grants/awarded/mg-252894-oms-23)),
+[BGCI-US](https://www.bgci.org/), and the [United States Botanic Garden](https://www.usbg.gov/).

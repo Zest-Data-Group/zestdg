@@ -6,7 +6,7 @@
 module.exports = [
   {
     name: "Dan Carver",
-    role: "Founder, spatial scientist",
+    role: "Owner, spatial scientist",
     image: "/img/dan-carver.jpg",
     links: [
       { label: "Google Scholar", url: "https://scholar.google.com/citations?user=pNkU3ikAAAAJ&hl=en" },

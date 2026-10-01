@@ -52,6 +52,16 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
+
+  // A project's client line may carry markdown links, e.g.
+  // "[Atlanta Botanical Garden](https://www.atlantabg.org/) & ...".
+  // mdInline renders them; plainText strips them where the line already
+  // sits inside a link (the home page panels) and nested anchors are invalid.
+  const md = require("markdown-it")({ html: false });
+  eleventyConfig.addFilter("mdInline", (s) => (s ? md.renderInline(String(s)) : ""));
+  eleventyConfig.addFilter("plainText", (s) =>
+    s ? String(s).replace(/\[([^\]]+)\]\([^)]*\)/g, "$1") : ""
+  );
   // Publications in one topic group (see src/_data/pubCategories.js).
   eleventyConfig.addFilter("inCategory", (pubs, key) =>
     (pubs || []).filter((p) => p.category === key)

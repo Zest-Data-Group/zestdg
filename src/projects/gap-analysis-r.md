@@ -2,7 +2,7 @@
 title: GapAnalysis R
 date: 2021-07-01
 featured: true
-client: Open source · published in Ecography · originally funded by CIAT Decision and Policy Analysis
+client: "Open source · published in Ecography · originally funded by [CIAT Decision and Policy Analysis (DAPA)](https://github.com/CIAT-DAPA/)"
 summary: An R package that scores how well a species is conserved, ex situ and in situ, from occurrence records and a distribution model.
 tools: [R, terra, sf, CRAN]
 repo: https://github.com/CIAT-DAPA/GapAnalysis
