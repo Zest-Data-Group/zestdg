@@ -36,7 +36,7 @@ module.exports = [
   },
   {
     name: "Gavin Hawkes",
-    role: "Computer science undergraduate, Colorado State University",
+    role: "Software engineer",
     image: "/img/gavin-hawkes.jpg",
     links: [],
     bio: `Gavin has brought his understanding of computer science to a few

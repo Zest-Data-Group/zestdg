@@ -65,7 +65,7 @@ developed and maintained compute systems to process and securely back up
 terabytes of imagery.
 
 ### Gavin Hawkes
-*Computer science undergraduate, Colorado State University*
+*Software engineer*
 
 Gavin has brought his understanding of computer science to a few
 important geospatial questions, like how road design and roadside signs
